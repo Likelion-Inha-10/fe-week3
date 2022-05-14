@@ -19,7 +19,7 @@ const CardText = styled.div`
     margin-bottom: 16px;
 `;
 const Main = styled.div`
-    box-shadow: 0px 1px 5px grey;
+    box-shadow: 0px 1px 5px #dedede;
     background-color: white;
     width: 348px;
     height: 386px;

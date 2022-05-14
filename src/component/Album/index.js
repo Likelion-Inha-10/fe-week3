@@ -10,7 +10,7 @@ const ALbumWrapper = styled.div`
     align-items: center;
 `;
 const CardContainer = styled.div`
-    width: 80%;
+    width: 67%;
     height: 1230px;
     display: flex;
     flex-flow: row wrap;
