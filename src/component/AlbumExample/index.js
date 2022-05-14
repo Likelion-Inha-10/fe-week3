@@ -17,20 +17,6 @@ const StyledAlbumExampleButtonWrapper = styled.div`
   justify-content: space-between;
 `;
 
-const StyledAlbumExampleButton = styled.button`
-  height: 38px;
-  border: 1px solid #6c757d;
-  border-radius: 0.25rem;
-  background-color: ${(props) =>
-    props.backgroundColor ? props.backgroundColor : "white"};
-  text-align: center;
-  padding: 0.375rem 0.75rem;
-  margin: 8px 0px;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-`;
-
 const AlbumExample = (props) => {
   return (
     <StyledAlbumExampleWrapper>

@@ -50,7 +50,7 @@ const StyledBottomText = styled.div`
 const MediaCard = (props) => {
   return (
     <CardWrapper>
-      <ImageWrapper bImage={props.backgroundImage}></ImageWrapper>
+      <ImageWrapper bImage={props.backgroundImage} />
       <TextBox
         color="#212529"
         fontSize="16px"
