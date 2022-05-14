@@ -57,7 +57,7 @@ const MediaCard = (props) => {
         fontWeight="normal"
         lineHeight="1.2"
         divWidth="308px"
-        marginBottom="15px"
+        marginBottom="10px"
         textAlign="left"
       >
         {props.text}
