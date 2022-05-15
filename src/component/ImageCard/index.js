@@ -9,7 +9,7 @@ const ImageContentCard = styled.div`
   border-radius: 3px;
   box-shadow: 0 0 5px 1px rgba(126, 126, 126, 0.3);
   background-color: white;
-  margin: 0 15px 0 15px;
+  margin: 0 15px 25px 15px;
 `;
 
 const CardImage = styled.div`
@@ -45,6 +45,7 @@ const ImageCard = (props) => {
         fontWeight="lighter"
         padding="5px 8px 5px 8px"
         marginLeft="20px"
+        float="left"
       >
         View
       </Button>
@@ -56,6 +57,8 @@ const ImageCard = (props) => {
         fontSize="14px"
         fontWeight="lighter"
         padding="5px 8px 5px 8px"
+        float="left"
+        marginLeft="-1px"
       >
         Edit
       </Button>
