@@ -6,13 +6,12 @@ const HeadButton = styled.div`
   height: 56px;
   width: 100%;
   background-color: ${(props) =>
-    props.backgroundColor ? props.backgroundColor : "#343A40"};
-  color: ${(props) => (props.color ? props.color : "white")};
+    props.backgroundColor || "#343A40"};
+  color: ${(props) => (props.color || "white")};
 `;
 
 const Content = styled.div`
   position: absolute;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";  
   height: 56px;
   font-weight: 400;
   width: 89.27px;
@@ -23,8 +22,8 @@ const Content = styled.div`
   align-items: center;
   font-size: 20px;
   background-color: ${(props) =>
-    props.backgroundColor ? props.backgroundColor : "#343A40"};
-  color: ${(props) => (props.color ? props.color : "white")};
+    props.backgroundColor || "#343A40"};
+  color: ${(props) => props.color || "white"};
 `;
 
 const LogoSection = styled.div`
@@ -33,12 +32,11 @@ const LogoSection = styled.div`
   width: 100px;
   margin-top: 3px; 
   margin-left: 260px;
-  background-image: url(${(props) => (props.picture ? props.picture : "none")});
+  background-image: url(${(props) => (props.picture || "none")});
   background-size: cover;
 `;
 
 const Header = (props) => {
-  console.log(props);
   return (
     <HeadButton backgroundColor={props.backgroundColor} color={props.color}>
       <LogoSection picture={props.picture}></LogoSection>

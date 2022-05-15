@@ -9,7 +9,7 @@ const WrapperCard3 = styled.div`
   padding-left: 310px;
   padding-bottom: 48px;
   background-color: ${(props) =>
-    props.backgroundColor ? props.backgroundColor : "#F8F9FA"};
+    props.backgroundColor || "#F8F9FA"};
 `;
 
 const Card3 = styled.div`
@@ -22,23 +22,22 @@ const Card3 = styled.div`
   border: 1px solid rgba(0,0,0,.125);
   box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
   background-color: ${(props) =>
-    props.backgroundColor ? props.backgroundColor : "white"};
+    props.backgroundColor || "white"};
 `;
 
 const ImageCard3 = styled.div`
   height: 225px;
   width: 345px;
   border-radius: 0.25rem;
-  background-image: url(${(props) => (props.picture ? props.picture : "none")});
+  background-image: url(${(props) => props.picture || "none"});
 `;
 
 const TextCard3 = styled.div`
   height: 90px;
   width: 300px;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   border-radius: 0.25rem;
   line-height: 1.5;
-  color: ${(props) => props.color ? props.color : "#212529"};
+  color: ${(props) => props.color || "#212529"};
   font-size: 16px;
   margin: 20px;
 `;
@@ -46,7 +45,6 @@ const TextCard3 = styled.div`
 const TimeCard3 = styled.div`
   height: 19.2px;
   width: 39.84px;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   color: #6C757D;
   font-size: 12.2px;
   margin-left: 270px;
@@ -54,7 +52,6 @@ const TimeCard3 = styled.div`
 `;
 
 const CardWrapper3 = (props) => {
-  console.log(props);
   return (
     <WrapperCard3 backgroundColor={props.backgroundColor}>
       <Card3 backgroundColor={props.backgroundColor}>

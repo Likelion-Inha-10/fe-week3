@@ -6,12 +6,11 @@ const ContentCard = styled.div`
   height: 408px;
   width: 100%;
   background-color: ${(props) =>
-    props.backgroundColor ? props.backgroundColor : "white"};
+    props.backgroundColor || "white"};
 `;
 
 const HeadContent = styled.div`
   positon: absolute;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";  
   height: 48px;
   width: 640px;
   display: flex;
@@ -22,13 +21,12 @@ const HeadContent = styled.div`
   font-size: 1.06cm;
   font-weight: 300;
   background-color: ${(props) =>
-    props.backgroundColor ? props.backgroundColor : "white"};
-  color: ${(props) => (props.color ? props.color : "#212529")};
+    props.backgroundColor || "white"};
+  color: ${(props) => (props.color ||"#212529")};
 `;
 
 const BodyContent = styled.div`
   positon: absolute;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";  
   height: 90px;
   width: 610px;
   display: flex;
@@ -41,7 +39,7 @@ const BodyContent = styled.div`
   font-weight: 300;
   color: #6C757D;
   background-color: ${(props) =>
-    props.backgroundColor ? props.backgroundColor : "white"};
+    props.backgroundColor || "white"};
 `;
 
 const ButtonsTool = styled.div`
@@ -54,12 +52,11 @@ const ButtonsTool = styled.div`
   text-align: center;
   items-align: center;
   background-color: ${(props) =>
-    props.backgroundColor ? props.backgroundColor : "white"};
+    props.backgroundColor || "white"};
 `;
 
 const Button1 = styled.div`
   positon: absolute; 
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";  
   height: 27px;
   width: 145px;
   display: flex;
@@ -72,13 +69,12 @@ const Button1 = styled.div`
   margin-right: 5px;
   border-radius: 0.25rem;
   background-color: ${(props) =>
-    props.backgroundColor ? props.backgroundColor : "#007BFF"};
-  color: ${(props) => (props.color ? props.color : "white")};
+    props.backgroundColor || "#007BFF"};
+  color: ${(props) => (props.color || "white")};
 `;
 
 const Button2 = styled.div`
   positon: absolute;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";  
   height: 27px;
   width: 140px;
   display: flex;
@@ -89,12 +85,11 @@ const Button2 = styled.div`
   text-align: center;
   border-radius: 0.25rem;
   background-color: ${(props) =>
-    props.backgroundColor ? props.backgroundColor : "#6C757D"};
-  color: ${(props) => (props.color ? props.color : "white")};
+    props.backgroundColor || "#6C757D"};
+  color: ${(props) => props.color || "white"};
 `;
 
 const Content = (props) => {
-  console.log(props);
   return (
     <ContentCard backgroundColor={props.backgroundColor}>
       <HeadContent backgroundColor={props.backgroundColor} color={props.color}>Album example</HeadContent> 
