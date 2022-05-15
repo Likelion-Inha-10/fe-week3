@@ -2,11 +2,11 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledText = styled.div`
-    font-size: ${(props) => (props.fontSize ? props.fontSize : "50px")};
-    color: ${(props) => (props.color ? props.color : "black")};
-    font-weight: ${(props) => (props.fontWeight ? props.fontWeight : "80")};
-    text-align: ${(props) => (props.textAlign ? props.textAlign : "left")};
-    line-height: ${(props) => (props.lineHeight ? props.lineHeight : "1")};
+    font-size: ${(props) => props.fontSize || "50px"};
+    color: ${(props) => props.color || "black"};
+    font-weight: ${(props) => props.fontWeight || "80"};
+    text-align: ${(props) => props.textAlign || "left"};
+    line-height: ${(props) => props.lineHeight || "1"};
     padding: 0px;
 `;
 

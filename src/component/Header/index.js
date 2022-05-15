@@ -10,14 +10,14 @@ const HeaderWrapper = styled.div`
     display: flex;
 
     justify-content: center;
-    // 주축을 중심으로 정렬
+    /* 주축을 중심으로 정렬 */
 
     align-items: center;
-    // 보조축을 중심으로 정렬
+    /* 보조축을 중심으로 정렬 */
 `;
 
 const HeaderContainder = styled.div`
-    width: 85%;
+    width: 67%;
     height: 40px;
     display: flex;
     align-items: center;
@@ -36,12 +36,13 @@ const IconMargin = styled.div`
 `;
 
 const HamburgerContainer = styled.div`
-    border: 1px solid grey; //이 색 더 진한 그레이로 바꾸기
+    border: 1px solid grey; /*이 색 더 진한 그레이로 바꾸기*/
     padding: 4px 12px;
     border-radius: 3px;
     display: flex;
     align-items: center;
 `;
+
 const Header = () => {
     return (
         <HeaderWrapper>

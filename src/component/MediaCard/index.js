@@ -4,12 +4,13 @@ import TextBox from "../TextBox";
 import Button from "../Button";
 
 const PhotoWrapper = styled.div`
-    background-image: url(${(props) => (props.src ? props.src : "none")});
+    background-image: url(${(props) => props.src || "none"});
     background-size: cover;
     border-radius: 3px;
     height: 225px;
     //
 `;
+
 const CardBody = styled.div`
     padding: 20px;
 `;
@@ -18,6 +19,7 @@ const CardText = styled.div`
     line-height: 1.3;
     margin-bottom: 16px;
 `;
+
 const Main = styled.div`
     box-shadow: 0px 1px 5px #dedede;
     background-color: white;
@@ -25,8 +27,6 @@ const Main = styled.div`
     height: 386px;
     border-radius: 4px;
     flex-direction: column;
-
-    //
 `;
 
 const BtnGroup = styled.div`
@@ -34,14 +34,17 @@ const BtnGroup = styled.div`
     border-radius: 4px;
     display: flex;
 `;
+
 const BorderRight = styled.div`
     border-right: 1px solid grey;
 `;
+
 const BtnTextGroup = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
 `;
+
 const MediaCard = (props) => {
     return (
         <>

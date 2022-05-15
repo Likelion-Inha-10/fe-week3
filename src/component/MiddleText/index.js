@@ -72,7 +72,6 @@ const MiddleText = () => {
                         textColor="white"
                         borderRadius="5px"
                         margin="2px"
-                        쟝
                     >
                         main call to action
                     </Button>

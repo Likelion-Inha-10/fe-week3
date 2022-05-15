@@ -9,11 +9,9 @@ function App() {
         <>
             <GlobalStyle />
             <Header />
-            <MiddleText></MiddleText>
-            <Album></Album>
-            <Footer></Footer>
-            {/* <MediaCard btncolor="blue" src="img/hi.png" title="Heading" internal="This is a
-     wider card with supporting text below as a natural lead-in to additio'nal content. This content is a little bit longer."> </MediaCard> */}
+            <MiddleText />
+            <Album />
+            <Footer />
         </>
     );
 }

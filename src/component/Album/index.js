@@ -2,13 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import MediaCard from "../MediaCard";
 import TextBox from "../TextBox";
-const ALbumWrapper = styled.div`
+
+const AlbumWrapper = styled.div`
     width: 100%;
     height: 1350px;
     display: flex;
     justify-content: center;
     align-items: center;
 `;
+
 const CardContainer = styled.div`
     width: 67%;
     height: 1230px;
@@ -20,7 +22,7 @@ const CardContainer = styled.div`
 
 const Album = () => {
     return (
-        <ALbumWrapper>
+        <AlbumWrapper>
             <CardContainer>
                 <MediaCard src="../img/hi.png" />
                 <MediaCard src="../img/hi.png" />
@@ -32,7 +34,7 @@ const Album = () => {
                 <MediaCard src="../img/hi.png" />
                 <MediaCard src="../img/hi.png" />
             </CardContainer>
-        </ALbumWrapper>
+        </AlbumWrapper>
     );
 };
 

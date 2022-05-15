@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Str from "../Str";
-import MyA from "../MyA";
+import StyledPTag from "../StyledPTag";
+import StyledATag from "../StyledATag";
 const FooterWrapper = styled.div`
     width: 100%;
     height: 152px;
@@ -20,37 +20,38 @@ const FooterContainer = styled.div`
 
 const LeftContainer = styled.div`
     display: flex;
-
     flex-direction: column;
     justify-content: center;
 `;
+
 const RightContainer = styled.div`
     padding-top: 15px;
 `;
+
 const Footer = () => {
     return (
         <FooterWrapper>
             <FooterContainer>
                 <LeftContainer>
-                    <Str fontSize="16px" fontWeight="400" color="grey">
+                    <StyledPTag fontSize="16px" fontWeight="400" color="grey">
                         Album example is © Bootstrap, but please download and
                         customize it for yourself!
-                    </Str>
-                    <Str fontSize="16px" fontWeight="400" color="grey">
+                    </StyledPTag>
+                    <StyledPTag fontSize="16px" fontWeight="400" color="grey">
                         New to Bootstrap?{" "}
-                        <MyA textDecoration="none" color="#007bff">
+                        <StyledATag textDecoration="none" color="#007bff">
                             Visit the homepage
-                        </MyA>{" "}
+                        </StyledATag>{" "}
                         or read our{" "}
-                        <MyA textDecoration="none" color="#007bff">
+                        <StyledATag textDecoration="none" color="#007bff">
                             getting started guide.
-                        </MyA>
-                    </Str>
+                        </StyledATag>
+                    </StyledPTag>
                 </LeftContainer>
                 <RightContainer>
-                    <MyA textDecoration="none" color="#007bff">
+                    <StyledATag textDecoration="none" color="#007bff">
                         Back to top
-                    </MyA>
+                    </StyledATag>
                 </RightContainer>
             </FooterContainer>
         </FooterWrapper>
