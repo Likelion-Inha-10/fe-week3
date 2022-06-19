@@ -22,7 +22,8 @@ https://getbootstrap.com/docs/4.3/examples/album/
 ![globalstyle](https://user-images.githubusercontent.com/103057334/174478343-a6013a0d-b866-42df-9187-25e5440cb131.png)
 
 <br>
-- 'createGlobalStyle'에 margind을 0으로 적용하여 전체적인 margin을 0으로 설정하였다.
+- 여긴 전체적인 스타이를 적용하기 위한 부분!
+- 전체적인 margin을 0으로 설정하였다.
 
 #### Top?
 ![top](https://user-images.githubusercontent.com/103057334/174478471-5e7a0554-ea7b-4d34-835f-ab258dc8e4b5.png)
