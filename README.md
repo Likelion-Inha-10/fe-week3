@@ -12,6 +12,12 @@ https://getbootstrap.com/docs/4.3/examples/album/
 # ⭐ 주의사항
 ✔최대한 Styled-Component와 Props를 활용
 
+## 🔥 Result
+
+결과는 아래와 같습니다.
+
+https://user-images.githubusercontent.com/79556112/174475519-7794df10-a02f-4cb5-98f8-0478b54acb6a.mp4
+
 ## 🔥 Solution
 
 홈페이지를 크게 **NavigationBar**, **MainBox**, **AlbumBox**, **Footer** 4가지로 나누어 생각해 위부터 쌓아올린다는 생각으로 작성하였습니다.
@@ -513,9 +519,9 @@ const ThumnailImg = styled.img`
 `;
 ```
 
-'CardBody'는 Card 내부의 text를 담는 역할을 하며, `CardText`가 내부에 담을 Text에 대한 Styled Component이다.
+'CardBody'는 Card 내부의 text를 담는 역할을 하며, `CardText`가 내부에 담을 Text에 대한 Styled Component입니다.
 
-`CardBottom`은 upload 시간과 버튼을 담는 Styled Component이다.
+`CardBottom`은 upload 시간과 버튼을 담는 Styled Component입니다.
 
 ```javascript
 const CardBody = styled.div`
@@ -627,3 +633,100 @@ const AlbumCard = (props) => {
 Thumbnail에 대한 주소는 `props`로 전달받도록 하였으며, 위에 대한 결과는 아래와 같습니다.
 
 ![image](https://user-images.githubusercontent.com/79556112/174475184-f5e4bd7e-adfb-401f-bfe3-6ba86434730c.png)
+
+## 📚 Footer
+
+Footer의 영역에 해당하는 `FooterBox`와 내부의 Content를 담는 `FooterWrap` Styled Component를 작성하였습니다.
+
+중앙 정렬을 위하여 `display: flex;`를 추가하였습니다.
+
+```javascript
+const FooterBox = styled.div`
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #6c757d;
+  line-height: 1.5;
+  text-align: left;
+  background-color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+`;
+
+const FooterWrap = styled.div`
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  max-width: 1140px;
+`;
+```
+
+Footer의 왼쪽 첫 text를 담기 위한 `FooterLeftFirst`와 두 번째에 해당하는 `FooterLeftSecond`, 
+
+오른쪽 상단으로 이동하는 앵커를 담기 위한 `FooterText`와 `HyperLink` Styled Component를 작성하였습니다.
+
+```javascript
+const FooterText = styled.div`
+  margin: 0;
+`;
+
+const FooterLeftFirst = styled.p`
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+`;
+
+const FooterLeftSecond = styled.p`
+  margin: 0;
+`;
+
+const HyperLink = styled.a`
+  color: #007bff;
+  text-decoration: none;
+`;
+```
+
+위를 바탕으로 작성한 **React Component**는 아래와 같습니다.
+
+```javascript
+const Footer = (props) => {
+  return (
+    <FooterBox>
+      <FooterWrap>
+        <div>
+          <FooterLeftFirst>
+            Album example is © Bootstrap, but please download and customize it
+            for yourself!
+          </FooterLeftFirst>
+          <FooterLeftSecond>
+            New to Bootstrap?
+            <HyperLink href="https://getbootstrap.com/">
+              {" "}
+              Visit the homepage{" "}
+            </HyperLink>
+            or read our
+            <HyperLink href="https://getbootstrap.com/docs/4.3/getting-started/introduction/">
+              {" "}
+              getting start guide.
+            </HyperLink>
+          </FooterLeftSecond>
+        </div>
+        <FooterText>
+          <HyperLink href="#">Back to top</HyperLink>
+        </FooterText>
+      </FooterWrap>
+    </FooterBox>
+  );
+};
+```
+
+또한 이에 대한 결과는 아래와 같습니다.
+
+![image](https://user-images.githubusercontent.com/79556112/174475409-f353e34f-775f-430c-b635-97651dab2866.png)
+
+
