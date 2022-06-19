@@ -61,6 +61,7 @@ https://getbootstrap.com/docs/4.3/examples/album/
 ![button](https://user-images.githubusercontent.com/103057334/174479330-ad96f876-2f64-4773-a700-d5953e60ba2e.png)
 
 <br>
+
 - height, border-radius, border, font-size, font-weight, padding, margin-left, background, color, float을 props로 넘겨주었다.
 - props로 넘겨주지 않은 경우에는 설정한 default 값대로!
 - 마우스를 버튼 위로 올리면 커서가 pointer로 바뀌도록 설정
