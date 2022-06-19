@@ -243,7 +243,7 @@ const StyledBottomText = styled.div`
 
 # < 결과 >
 
-<br>
+![week3](https://user-images.githubusercontent.com/100702397/174484907-f0eea7ff-f9a8-4c5d-84c2-47d3b5c86333.JPG)
 
 # 제출시 필수 사항
 
