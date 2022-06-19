@@ -18,7 +18,7 @@ https://getbootstrap.com/docs/4.3/examples/album/
 
 ### 📚 NavigationBar
 
-**NavigationBar**는 크게 `Hamburger`와 'NavigationBar`로 나눌 수 있으며, 'NavigationBar`을 먼저 구현하였습니다.
+**NavigationBar**는 크게 `Hamburger`와 `NavigationBar`로 나눌 수 있으며, `NavigationBar`을 먼저 구현하였습니다.
 우선 모든 NavigationBar Content를 담을 `NavigationBox`와 `NavigationWrap` Styled Component를 아래와 같이 작성하였습니다.
 
 ``` javascript
@@ -49,3 +49,41 @@ const NavigationWrap = styled.div`
 ```
 `NavigationBox`는 NavgationBar의 전체 영역을 나타내며, `NavigationWrap`이 실질적인 Content들을 담고 있습니다. `NavigationBox`에 `display: flex;` 속성을 추가해 상하좌우 중앙정렬을 하였으며, `NavigationWrap`도 동일한 속성을 추가하여 Content들을 상하좌우 중앙정렬이 되도록 하였습니다.
 
+```javascript
+const PageTitle = styled.a`
+  color: white;
+  font-size: 1.25rem;
+  vertical-align: middle;
+  margin-left: 0;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  &:link {
+    text-decoration: none;
+  }
+`;
+
+const HamburgerButton = styled.button`
+  padding: 0.25rem 0.75rem;
+  margin-left: auto;
+  margin-right: 0;
+  border-radius: 0.25rem;
+  font-size: 1.8rem;
+  color: #a5a8a9;
+  border: 1px solid #44474c;
+  background: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  &:focus {
+    box-shadow: inset 0 0 0 1px black;
+    border: 1px solid white;
+  }
+`;
+```
+
+내부에는 `PageTitle`과 `HamburgerButton` Styled component를 추가하기 위해 작성하였으며, 이는 각각 상단바 좌측의 Title과 우측의 hamburger menu button의 역할을 합니다.
