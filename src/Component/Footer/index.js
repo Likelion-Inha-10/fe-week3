@@ -45,7 +45,6 @@ const HyperLink = styled.a`
 `;
 
 const Footer = (props) => {
-  console.log(props);
   return (
     <FooterBox>
       <FooterWrap>

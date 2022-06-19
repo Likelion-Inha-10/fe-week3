@@ -53,13 +53,13 @@ const Button = styled.a`
   margin-left: 0.125rem;
   margin-right: 0.125rem;
   padding: 0.375rem 0.75rem;
-  background-color: ${(props) => (props.color ? props.color : "black")};
+  background-color: ${(props) => props.color || "black"};
   color: white;
   font-size: 1rem;
   font-weight: 400;
   text-align: center;
   vertical-align: middle;
-  border: 1px solid ${(props) => (props.color ? props.color : "black")};
+  border: 1px solid ${(props) => props.color || "black"};
   border-radius: 0.25rem;
   text-decoration: none;
   transition: 0.15s;
@@ -67,9 +67,8 @@ const Button = styled.a`
     text-decoration: none;
   }
   &:hover {
-    background-color: ${(props) =>
-      props.hoverColor ? props.hoverColor : "black"};
-    border-color: ${(props) => (props.hoverColor ? props.hoverColor : "black")};
+    background-color: ${(props) => props.hoverColor || "black"};
+    border-color: ${(props) => props.hoverColor || "black"};
     transition: 0.15s;
   }
 `;

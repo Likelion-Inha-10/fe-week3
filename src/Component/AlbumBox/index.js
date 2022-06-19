@@ -29,7 +29,6 @@ const AlbumWrap = styled.div`
 // map 활용해서 배열해보라고 하셔서 하긴 했는데.... 이게 맞는건지는 모르겠어요...ㅠㅠㅠ
 
 const AlbumBox = (props) => {
-  console.log(props);
   const cards = [
     {},
     {},

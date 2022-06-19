@@ -57,8 +57,6 @@ const CardBottom = styled.div`
   align-items: center;
 `;
 
-const CardButtonWrap = styled.div``;
-
 const FirstButton = styled.button`
   padding: 0.25rem 0.5rem;
   margin-right: 0;
@@ -109,7 +107,6 @@ const SecondButton = styled.button`
 `;
 
 const AlbumCard = (props) => {
-  console.log(props);
   return (
     <AlbumCardWrap>
       <AlbumCardShadow>
@@ -121,10 +118,10 @@ const AlbumCard = (props) => {
             to additional content. This content is a little bit longer.
           </CardText>
           <CardBottom>
-            <CardButtonWrap>
+            <div>
               <FirstButton href="#">View</FirstButton>
               <SecondButton>Edit</SecondButton>
-            </CardButtonWrap>
+            </div>
             <Minute>9 min</Minute>
           </CardBottom>
         </CardBody>

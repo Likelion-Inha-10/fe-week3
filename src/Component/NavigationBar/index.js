@@ -4,7 +4,7 @@ import { IoCameraOutline } from "react-icons/io5";
 import { AiOutlineMenu } from "react-icons/ai";
 import HamburgerContent from "../HamburgerContent";
 
-var hamburgerHeight = "0";
+let hamburgerHeight = "0";
 
 const NavigationBox = styled.header`
   z-index: 10;
@@ -70,7 +70,6 @@ const NavigationBar = () => {
   const [buttonState, setState] = useState("0");
 
   const Swap = () => {
-    console.log("Nav : " + hamburgerHeight);
     hamburgerHeight = hamburgerHeight === "0" ? "auto" : "0";
     setState(hamburgerHeight);
   };

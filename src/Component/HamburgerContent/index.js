@@ -76,7 +76,6 @@ const HyperLink = styled.a`
 `;
 
 const HamburgerContent = (props) => {
-  console.log(props);
   return (
     <HamburgerBox currentState={props.currentState}>
       <HamburgerWrap>
