@@ -32,9 +32,9 @@ https://getbootstrap.com/docs/4.3/examples/album/
 - 그리고 react icon을 이용하여 제시된 페이지와 최대한 같도록 구현하였는데...
 - 메뉴 아이콘을 감싸기 위해서 IconWrapper을 만들었다. 디테일한 부분은 최대한 클론 코딩 페이지와 같도록 설정.
 <br>
-##### 이제 제대로 Top을 살펴보려는데...!
+#### 이제 제대로 Top을 살펴보려는데...!
 <br>
-##### TextBox?
+#### TextBox?
 
 ![text](https://user-images.githubusercontent.com/103057334/174478816-3de845b6-f8e6-44bb-8fb1-70d48f7dcf31.png)
 
