@@ -1,44 +1,394 @@
-# 멋쟁이 사자처럼 10기 FE 3주차 과제 🦁
+# 리뷰2
 
-반갑습니다 여러분!!
-지난 2주차 세션 때 React.js에 대해서 재밌게 열심히 실습을 잘 진행하셨나요?
-다들 정말 잘하시던데… 처음 배우시는건지 살짝 의문이 드는데 괜찮으시겠어요..?
+### 구조
 
-# 실습 진행방법 
-3주차는 과제 중심으로 세션이 진행됩니다!
-Component를 만들어서 샤샤샥 주어진 홈페이지를 구현하고, PR을 올리고 웹페이지를 배포하세요😀
- - 이 레포를 fork 한다!
- - fork하여 이동한 자신의 레포에서 깃크라켄을 통해 클론을 받습니다.
- - 클론을 받은 파일을 vs 코드에서 엽니다!
- - vs 코드에서 터미널을 열어서 npm run start 를 입력하면 코드가 실행됩니다!
+- Header
+    - HeaderWrapper
+        - LogoContainer
+            - Icon - 카메라
+            - TextBox - 로고(Album)
+        - HamburgerContainer
+            - Icon - 햄버거
+- MiddleText
+    - MiddleTextWrapper
+        - FirstTextContainer
+            - TextBox - Album example
+        - SecondTextContainer
+            - TextBox - 본문
+            - ButtonContainer
+                - Button - 1
+                - Button - 2
+- Album
+    - AlbumWrapper
+        - CardContainer
+            - MediaCard - 9개
+- Footer
+    - FooterWrapper
+        - LeftContainer
+            - StyledPTag - 문장들
+        - RightContainer
+            - StyledATag - 링크
+            
 
-# 3주차 MISSION :  Bootstrap Album 페이지 클론코딩 해오기
-https://getbootstrap.com/docs/4.3/examples/album/
+# Header
 
- ### 클론코딩(Clone-Coding)이란?
-: 말그대로 클론! 실제 서비스를 직접 내 손으로 밑 바닥부터 한땀 한땀 구현하는 코딩 학습방법입니다.
-실제 구현되어있는 서비스를 직접 내 손으로 따라 만들면서 배우는 것만큼 빠르고 효과적인 공부법은 없습니다!
+미리 만들어둔 TextBox 태그를 재사용했다. 
 
-#클론코딩 제외 대상
-1. 우측 상단 햄버거 버튼
-2. 각 카드별 View/Edit 버튼
-3. 하단 Footer
-4. 기타 애니메이션 효과
+- HeaderWrapper
+    
+    기능: 헤더의 큰 틀, 배경색, 높이 지정
+    
 
+- HeaderContainer
+    
+    기능: 아이콘, 로고, 햄버거 버튼을 중앙정렬해줄 틀
+    
+- LogoContainer
+    
+    기능: 아이콘, 로고를 담아줄 틀 
+    
 
--> 시간적으로 여유가 있으신 분들은 제외 대상 부분까지 구현해보셔도 실력향상에 큰 도움이 될 것 같습니다.
+- IconMargin
+    
+    기능: 아이콘, 로고 사이를 벌려줌(마진)
+    
+- HamburgerContainer
+    
+    기능: 햄버거 버튼을 싸고있는 테두리 구현
+    
 
+```jsx
+import React from "react";
+import styled from "styled-components";
+import { BiCamera } from "react-icons/bi";
+import TextBox from "../TextBox";
+import { AiOutlineMenu } from "react-icons/ai";
+const HeaderWrapper = styled.div`
+    widht: 100%;
+    height: 56px;
+    background-color: #343a40;
+    display: flex;
 
-# 주의사항!
-✔최대한 Styled-Component와 Props를 활용해서 제작해 주시길 바랍니다.
+    justify-content: center;
+    /* 주축을 중심으로 정렬 */
 
-✔아직은 실제 검색 기능, 클릭시 나오는 메뉴등 동적인 부분은 구현하기 어렵습니다, 기능을 구현한다는 생각보다 현재 보이는 페이지 그대로를 만들어주세요!
+    align-items: center;
+    /* 보조축을 중심으로 정렬 */
+`;
 
+const HeaderContainder = styled.div`
+    width: 67%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+`;
 
-# 제출시 필수 사항
-- 과제 제출은 일요일 9시 입니다.
-- PR의 제목은 “ [본인의 성함] 멋쟁이 사자처럼 3번쨰 과제 제출 “
-- 제작하신 클론 페이지를 캡쳐해서 PR에 같이 올려주세요.
+const LogoContainer = styled.div`
+    display: flex;
+    align-items: center;
+`;
 
+const IconMargin = styled.div`
+    margin-right: 6px;
+    display: flex;
+    align-items: center;
+`;
 
+const HamburgerContainer = styled.div`
+    border: 1px solid grey; /*이 색 더 진한 그레이로 바꾸기*/
+    padding: 4px 12px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+`;
 
+const Header = () => {
+    return (
+        <HeaderWrapper>
+            <HeaderContainder>
+                <LogoContainer>
+                    <IconMargin>
+                        <BiCamera color="white" size="25" />
+                    </IconMargin>
+                    <TextBox color="white" fontSize="20px" fontWeight="700">
+                        Album
+                    </TextBox>
+                </LogoContainer>
+                <HamburgerContainer>
+                    <AiOutlineMenu color="grey" size="28" />
+                </HamburgerContainer>
+            </HeaderContainder>
+        </HeaderWrapper>
+    );
+};
+
+export default Header;
+```
+
+# MiddleText
+
+- MiddleTextWrapper
+    
+    기능: 중앙 텍스트의 큰 틀, 높이지정
+    
+- MiddleTextContainer
+    
+    기능: 텍스트들을 중앙 정렬해줌
+    
+
+- ButtonContainer
+    
+    기능: 버튼들을 중앙 정렬해줌
+    
+- FirstTextContainer
+    
+    기능: Album example을 중앙 정렬해줌
+    
+- SecondTextContainer
+    
+    기능: 본문을 중앙 정렬해줌
+    
+
+- ButtonContainer
+    
+    기능: 버튼 두개를 담아 중앙 정렬해줌
+    
+    ```jsx
+    import React from "react";
+    import styled from "styled-components";
+    import TextBox from "../TextBox";
+    import Button from "../Button";
+    
+    const MiddleTextWrapper = styled.div`
+        background-color: white;
+    
+        width: 100%;
+        height: 408px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    `;
+    const MiddleTextContainer = styled.div`
+        width: 40%;
+        height: 216px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    `;
+    
+    const ButtonContainer = styled.div`
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    `;
+    
+    const FirstTextContainer = styled.div`
+        width: 100%;
+    
+        display: flex;
+        justify-content: center;
+        margin-bottom: 8px;
+    `;
+    const SecontTextContainer = styled.div`
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    
+        margin-bottom: 16px;
+    `;
+    
+    const MiddleText = () => {
+        return (
+            <MiddleTextWrapper>
+                <MiddleTextContainer>
+                    <FirstTextContainer>
+                        <TextBox fontSize="42px" fontWeight="250">
+                            Album example
+                        </TextBox>
+                    </FirstTextContainer>
+                    <SecontTextContainer>
+                        <TextBox
+                            textAlign="center"
+                            lineHeight="1.5"
+                            fontSize="20px"
+                            fontWeight="250"
+                            color="grey"
+                        >
+                            Something short and leading about the collection
+                            below—its contents, the creator, etc. Make it short and
+                            sweet, but not too short so folks don’t simply skip over
+                            it entirely.
+                        </TextBox>
+                    </SecontTextContainer>
+                    <ButtonContainer>
+                        <Button
+                            backgroundColor="#007bff"
+                            borderColor="white"
+                            textColor="white"
+                            borderRadius="5px"
+                            margin="2px"
+                        >
+                            main call to action
+                        </Button>
+    
+                        <Button
+                            backgroundColor="#6c757d"
+                            borderColor="white"
+                            textColor="white"
+                            margin="2px"
+                            borderRadius="5px"
+                        >
+                            secondary action
+                        </Button>
+                    </ButtonContainer>
+                </MiddleTextContainer>
+            </MiddleTextWrapper>
+        );
+    };
+    export default MiddleText;
+    ```
+    
+
+# Album
+
+만들었던 MediaCard 재사용
+
+- AlbumWrapper
+    
+    기능: 앨범의 높이 설정, 큰 틀
+    
+- CardContainer
+    
+    기능: 카드들을 중앙 정렬해주고, 3개씩 나열되게 해줌
+    
+
+```jsx
+import React from "react";
+import styled from "styled-components";
+import MediaCard from "../MediaCard";
+import TextBox from "../TextBox";
+
+const AlbumWrapper = styled.div`
+    width: 100%;
+    height: 1350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+const CardContainer = styled.div`
+    width: 67%;
+    height: 1230px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: space-between;
+`;
+
+const Album = () => {
+    return (
+        <AlbumWrapper>
+            <CardContainer>
+                <MediaCard src="../img/hi.png" />
+                <MediaCard src="../img/hi.png" />
+                <MediaCard src="../img/hi.png" />
+                <MediaCard src="../img/hi.png" />
+                <MediaCard src="../img/hi.png" />
+                <MediaCard src="../img/hi.png" />
+                <MediaCard src="../img/hi.png" />
+                <MediaCard src="../img/hi.png" />
+                <MediaCard src="../img/hi.png" />
+            </CardContainer>
+        </AlbumWrapper>
+    );
+};
+
+export default Album;
+```
+
+# Footer
+
+StyledPTag, StyledATag를 만들어서 사용(밑줄이 없어야 해서 만듦)
+
+- FooterWrapper
+    
+    기능: 높이, 큰 틀 지정
+    
+
+- FooterContainer
+    
+    기능: 내부의 요소들을 중앙 정렬해줌, 2개의 컨테이너를 양쪽으로 두게 끔 함
+    
+- LeftContainer
+    
+    기능: 왼쪽 텍스트를 중앙 정렬해줌
+    
+- RightContainer
+    
+    기능: 패딩 
+    
+    ```jsx
+    import React from "react";
+    import styled from "styled-components";
+    import StyledPTag from "../StyledPTag";
+    import StyledATag from "../StyledATag";
+    const FooterWrapper = styled.div`
+        width: 100%;
+        height: 152px;
+        display: flex;
+        background-color: white;
+        justify-content: center;
+        align-items: center;
+    `;
+    
+    const FooterContainer = styled.div`
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        height: 50%;
+    `;
+    
+    const LeftContainer = styled.div`
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    `;
+    
+    const RightContainer = styled.div`
+        padding-top: 15px;
+    `;
+    
+    const Footer = () => {
+        return (
+            <FooterWrapper>
+                <FooterContainer>
+                    <LeftContainer>
+                        <StyledPTag fontSize="16px" fontWeight="400" color="grey">
+                            Album example is © Bootstrap, but please download and
+                            customize it for yourself!
+                        </StyledPTag>
+                        <StyledPTag fontSize="16px" fontWeight="400" color="grey">
+                            New to Bootstrap?{" "}
+                            <StyledATag textDecoration="none" color="#007bff">
+                                Visit the homepage
+                            </StyledATag>{" "}
+                            or read our{" "}
+                            <StyledATag textDecoration="none" color="#007bff">
+                                getting started guide.
+                            </StyledATag>
+                        </StyledPTag>
+                    </LeftContainer>
+                    <RightContainer>
+                        <StyledATag textDecoration="none" color="#007bff">
+                            Back to top
+                        </StyledATag>
+                    </RightContainer>
+                </FooterContainer>
+            </FooterWrapper>
+        );
+    };
+    
+    export default Footer;
+    ```
