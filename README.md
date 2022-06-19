@@ -135,7 +135,7 @@ const NavigationBar = () => {
 
 ### 📜 HamburgerContent
 
-`NavigationBar`와 동일하게 전체 영역을 표시할 `HamburgerBox`와 내부에 Content를 담을 `HamburgerWrap` Styled Component를 작성하였습니다. (중앙 정렬을 위해 동일하게 ` display: flex;` 작성)
+`NavigationBar`와 동일하게 전체 영역을 표시할 `HamburgerBox`와 내부에 Content를 담을 `HamburgerWrap` Styled Component를 작성하였습니다. (중앙 정렬을 위해 동일하게 ` display: flex;` 작성) 전체 높이가 전달받은 `props`에 의해 달라져야 하므로 이를 **삼항 연산자**를 이용해 작성하였습니다.
 
 ```javascript
 const HamburgerBox = styled.div`
@@ -257,3 +257,105 @@ const HamburgerContent = (props) => {
 
 ![image](https://user-images.githubusercontent.com/79556112/174473540-d71aba86-6364-4489-b029-004766cf376b.png)
 
+## 📚 MainBox
+
+전체 영역에 해당하는 `MainTextBox`와 내부의 `MainTitle`, `MainText` Styled Component를 아래와 같이 작성하였습니다.
+
+```javascript
+const MainTextBox = styled.div`
+  background-color: white;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+`;
+
+const MainTitle = styled.h1`
+  color: black;
+  font-weight: 300;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  max-width: 40rem;
+`;
+
+const MainText = styled.p`
+  color: gray;
+  font-weight: 300;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  max-width: 40rem;
+  padding-left: 15px;
+  padding-right: 15px;
+`;
+```
+
+하단에 들어가는 2개의 button은 색상이 달라야 하므로 Styled Component로 아래와 같이 작성하여 가변 스타일링이 가능하도록 작성하였습니다. 클릭했을 경우에 text의 style이 변하지 않도록 `text-decoration: none;`을 추가하였고, 커서 hover 시 button 밝기 변화를 위해 `background-color`에 대한 css를 추가 작성해주었습니다. 자연스럽게 변화하도록 animation 효과를 주기 위해 `transition: 0.15s;`도 추가 작성하였습니다.
+
+```javascript
+const Button = styled.a`
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: 0.125rem;
+  margin-right: 0.125rem;
+  padding: 0.375rem 0.75rem;
+  background-color: ${(props) => props.color || "black"};
+  color: white;
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid ${(props) => props.color || "black"};
+  border-radius: 0.25rem;
+  text-decoration: none;
+  transition: 0.15s;
+  &:link {
+    text-decoration: none;
+  }
+  &:hover {
+    background-color: ${(props) => props.hoverColor || "black"};
+    border-color: ${(props) => props.hoverColor || "black"};
+    transition: 0.15s;
+  }
+`;
+```
+
+위에서 작성한 Styled Component는 **React Component**에서 아래와 같이 사용하였습니다.
+
+```javascript
+const MainBox = (props) => {
+  return (
+    <MainTextBox>
+      <MainTitle>Album example</MainTitle>
+      <MainText>
+        Something short and leading about the collection below—its contents, the
+        creator, etc. Make it short and sweet, but not too short so folks don’t
+        simply skip over it entirely.
+      </MainText>
+      <ButtonWrap>
+        <Button href="#" color="#3579F6" hoverColor="#2C67D2">
+          Main call to action
+        </Button>
+        <Button href="#" color="#6E757C" hoverColor="#5B6267">
+          Secondary action
+        </Button>
+      </ButtonWrap>
+    </MainTextBox>
+  );
+};
+```
+
+이에 대한 결과는 아래와 같습니다.
+
+![image](https://user-images.githubusercontent.com/79556112/174474127-54c61610-49c5-452b-8511-b5d1b5cc0263.png)
+
+## 📚 AlbumBox
