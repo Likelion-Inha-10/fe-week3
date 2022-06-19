@@ -34,6 +34,7 @@ https://getbootstrap.com/docs/4.3/examples/album/
 <br>
 ##### 이제 제대로 Top을 살펴보려는데...!
 ##### TextBox?
+
 ![text](https://user-images.githubusercontent.com/103057334/174478816-3de845b6-f8e6-44bb-8fb1-70d48f7dcf31.png)
 
 <br>
@@ -49,11 +50,13 @@ https://getbootstrap.com/docs/4.3/examples/album/
 - 그리고 전체적으로 TopWrapper로 감싸주면 끝!
 
 #### PageExplain?
+
 ![pageExplain](https://user-images.githubusercontent.com/103057334/174479159-91068ac6-ff37-4ad2-911d-02ef0b53e49c.png)
 
 <br>
 - 이 부분은 페이지의 중간 부분. 즉, 앨범 제목과 설명이 있고 가운데에 두개의 버튼이 있는 부분!
 - 이 곳의 전체적인 틀의 스타일은 PageWrapper에 저장하였다. text 가운데에 배열하고 높이, padding, border 등을 설정.
+
 
 ##### 이제 제대로 PageExplain을 살펴보려는데...!
 ##### Button?
