@@ -41,7 +41,7 @@ https://getbootstrap.com/docs/4.3/examples/album/
 ![text](https://user-images.githubusercontent.com/103057334/174478816-3de845b6-f8e6-44bb-8fb1-70d48f7dcf31.png)
 
 <br>
-- color, font-weight, font-size, float, padding, cursor을 props로 넘겨주었다.
+- color, font-weight, font-size, float, padding, cursor을 props로 넘겨주었다.<
 - props로 넘겨주지 않은 경우에는 설정한 default 값대로!
 
 ##### 다시 Top으로 돌아와서...!
