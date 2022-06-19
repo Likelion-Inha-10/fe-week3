@@ -49,7 +49,9 @@ const NavigationWrap = styled.div`
   padding-right: 15px;
 `;
 ```
-`NavigationBox`는 NavgationBar의 전체 영역을 나타내며, `NavigationWrap`이 실질적인 Content들을 담고 있습니다. `NavigationBox`에 `display: flex;` 속성을 추가해 상하좌우 중앙정렬을 하였으며, `NavigationWrap`도 동일한 속성을 추가하여 Content들을 상하좌우 중앙정렬이 되도록 하였습니다.
+`NavigationBox`는 NavgationBar의 전체 영역을 나타내며, `NavigationWrap`이 실질적인 Content들을 담고 있습니다. 
+`NavigationBox`에 `display: flex;` 속성을 추가해 상하좌우 중앙정렬을 하였으며, 
+`NavigationWrap`도 동일한 속성을 추가하여 Content들을 상하좌우 중앙정렬이 되도록 하였습니다.
 
 ```javascript
 const PageTitle = styled.a`
@@ -88,7 +90,10 @@ const HamburgerButton = styled.button`
 `;
 ```
 
-내부에는 `PageTitle`과 `HamburgerButton` Styled component를 추가하기 위해 작성하였으며, 이는 각각 상단바 좌측의 Title과 우측의 hamburger menu button의 역할을 합니다. `PageTitle`에는 a tag이므로 클릭하였을 때, text의 색상이 변하고 밑줄이 생기는 것을 방지하기 위해 `text-decoration: none;`을 추가 작성하였습니다. 또한 `HamburgerButton`을 클릭해 focus된 경우에 border 색상 변화를 위해 `&:focus`시의 추가적인 css를 작성하였습니다.
+내부에는 `PageTitle`과 `HamburgerButton` Styled component를 추가하기 위해 작성하였으며, 
+이는 각각 상단바 좌측의 Title과 우측의 hamburger menu button의 역할을 합니다. 
+`PageTitle`에는 a tag이므로 클릭하였을 때, text의 색상이 변하고 밑줄이 생기는 것을 방지하기 위해 `text-decoration: none;`을 추가 작성하였습니다. 
+또한 `HamburgerButton`을 클릭해 focus된 경우에 border 색상 변화를 위해 `&:focus`시의 추가적인 css를 작성하였습니다.
 
 위에서 작성한 Styled Component를 **React Component**에 다음과 같이 작성하여 사용하였습니다.
 
@@ -123,8 +128,10 @@ const NavigationBar = () => {
   );
 };
 ```
-`IoCameraOutline`은 Title 옆에 카메라 모양 icon을 추가해주기 위한 tag로 **react icon**을 사용하였습니다. 이를 위해 `import { IoCameraOutline } from "react-icons/io5";`를 코드 상단에 작성해주었습니다.
-동일하게 `AiOutlineMenu` 또한 hamburger menu icon을 추가해주기 위한 tag로, `import { AiOutlineMenu } from "react-icons/ai";`를 코드 상단에 추가 작성해주었습니다.
+`IoCameraOutline`은 Title 옆에 카메라 모양 icon을 추가해주기 위한 tag로 **react icon**을 사용하였습니다. 
+이를 위해 `import { IoCameraOutline } from "react-icons/io5";`를 코드 상단에 작성해주었습니다.
+동일하게 `AiOutlineMenu` 또한 hamburger menu icon을 추가해주기 위한 tag로, 
+`import { AiOutlineMenu } from "react-icons/ai";`를 코드 상단에 추가 작성해주었습니다.
 
 상단의 'HamburgerContent'는 **HamburgerButton**을 클릭했을 시에 보이는 Hamburger Menu를 담고 있는 React Component입니다. height의 변화를 통해 보이거나 보이지 않도록 하였으며, 이를 관리하기 위해 **button 클릭 시에 state가 변경되어 `HamburgerContent`의 `props`로 넘겨주도록** 하였습니다.
 
@@ -135,7 +142,9 @@ const NavigationBar = () => {
 
 ### 📜 HamburgerContent
 
-`NavigationBar`와 동일하게 전체 영역을 표시할 `HamburgerBox`와 내부에 Content를 담을 `HamburgerWrap` Styled Component를 작성하였습니다. (중앙 정렬을 위해 동일하게 ` display: flex;` 작성) 전체 높이가 전달받은 `props`에 의해 달라져야 하므로 이를 **삼항 연산자**를 이용해 작성하였습니다.
+`NavigationBar`와 동일하게 전체 영역을 표시할 `HamburgerBox`와 내부에 Content를 담을 `HamburgerWrap` Styled Component를 작성하였습니다. 
+(중앙 정렬을 위해 동일하게 ` display: flex;` 작성) 
+전체 높이가 전달받은 `props`에 의해 달라져야 하므로 이를 **삼항 연산자**를 이용해 작성하였습니다.
 
 ```javascript
 const HamburgerBox = styled.div`
@@ -223,7 +232,9 @@ const HyperLink = styled.a`
 `;
 ```
 
-전체를 감쌀 `ContactWrap`과 내부에 들어갈 `HyperLink`를 작성해주었습니다. `HyperLink`는 커서를 hover할 시에 text에 밑줄이 생겨야 하므로 `&:hover`시에 추가적인 css를 작성해주었습니다. `Title`은 **About**과 동일하므로 위에서 작성한 Styled Component를 사용하였습니다.
+전체를 감쌀 `ContactWrap`과 내부에 들어갈 `HyperLink`를 작성해주었습니다. 
+`HyperLink`는 커서를 hover할 시에 text에 밑줄이 생겨야 하므로 `&:hover`시에 추가적인 css를 작성해주었습니다. 
+`Title`은 **About**과 동일하므로 위에서 작성한 Styled Component를 사용하였습니다.
 
 위에서 작성한 Styled Component는 **React Component**에서 아래와 같이 사용하였습니다.
 
@@ -299,7 +310,10 @@ const MainText = styled.p`
 `;
 ```
 
-하단에 들어가는 2개의 button은 색상이 달라야 하므로 Styled Component로 아래와 같이 작성하여 가변 스타일링이 가능하도록 작성하였습니다. 클릭했을 경우에 text의 style이 변하지 않도록 `text-decoration: none;`을 추가하였고, 커서 hover 시 button 밝기 변화를 위해 `background-color`에 대한 css를 추가 작성해주었습니다. 자연스럽게 변화하도록 animation 효과를 주기 위해 `transition: 0.15s;`도 추가 작성하였습니다.
+하단에 들어가는 2개의 button은 색상이 달라야 하므로 Styled Component로 아래와 같이 작성하여 가변 스타일링이 가능하도록 작성하였습니다. 
+클릭했을 경우에 text의 style이 변하지 않도록 `text-decoration: none;`을 추가하였고, 
+커서 hover 시 button 밝기 변화를 위해 `background-color`에 대한 css를 추가 작성해주었습니다. 
+자연스럽게 변화하도록 animation 효과를 주기 위해 `transition: 0.15s;`도 추가 작성하였습니다.
 
 ```javascript
 const Button = styled.a`
