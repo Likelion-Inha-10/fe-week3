@@ -94,6 +94,8 @@ https://getbootstrap.com/docs/4.3/examples/album/
 - ImageContentCard는 각 앨범 카드의 전체적인 틀. 크기나 디자인 등은 클론 코딩 페이지와 최대한 같게 한다.
 - CardImage는 앨범의 사진 부분! 크기나 디자인 등은 클론 코딩 페이지와 최대한 같게 하고, 사진은 props를 통해 넘겨받는다.
 - CardContent는 앨범에서 사진 설명 부분. 사진마다 설명 분량의 차이가 있을 수 있으므로 일관성을 갖도록 크기를 설정해준다.
+
+
 ##### 이제 ImageCard을 제대로 살펴보자...!
 - 먼저 CardImage로 사진을 props로 넘겨 받는다.
 - 그리고 사진에 대한 설명은 CardContent 안에서 TextBox를 통해 props로 넘겨 받는다.
