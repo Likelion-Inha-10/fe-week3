@@ -3,7 +3,7 @@ react 실습 두번째!
 클론 코딩!
 
 ### 문제?
-아래 페이지를 클론 코딩하면 된다.
+아래 페이지를 클론 코딩하면 된다.<br>
 https://getbootstrap.com/docs/4.3/examples/album/
 <br>
 #클론코딩 제외 대상
@@ -15,7 +15,8 @@ https://getbootstrap.com/docs/4.3/examples/album/
 ### 나의 구현 방식?
 먼저 app.js로 전체적인 틀을 보면...
 
-![app](https://user-images.githubusercontent.com/103057334/174478199-14923122-5827-4688-a5c3-a4cc2c6481f5.png)
+![app](https://user-images.githubusercontent.com/103057334/174478256-67c99908-9033-4d30-8dd4-bfe900f096fc.png)
+
 
 <br> 
 
