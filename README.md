@@ -42,3 +42,9 @@ https://getbootstrap.com/docs/4.3/examples/album/
 
 
 
+<img width="700" alt="image" src="public\image\mediacard.jpg">
+<img width="700" alt="image" src="public\image\mainbody.jpg">
+css와 props를 이용해서 똑같은 작업들을 반복하지 않고 간단하게 값만 넣어서 쓸 수 있도록 설계했다.<br>
+<img width="700" alt="image" src="public\image\cardcontainer.jpg">
+<img width="700" alt="image" src="public\image\apps.jpg">
+각각의 component를 원하는 위치에 배치하기 위해서 wrapper로 감싸서 flex를 이용했다.<br>
