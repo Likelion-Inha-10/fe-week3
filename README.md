@@ -1,44 +1,125 @@
 # 멋쟁이 사자처럼 10기 FE 3주차 과제 🦁
+react 실습 두번째!
+클론 코딩!
 
-반갑습니다 여러분!!
-지난 2주차 세션 때 React.js에 대해서 재밌게 열심히 실습을 잘 진행하셨나요?
-다들 정말 잘하시던데… 처음 배우시는건지 살짝 의문이 드는데 괜찮으시겠어요..?
-
-# 실습 진행방법 
-3주차는 과제 중심으로 세션이 진행됩니다!
-Component를 만들어서 샤샤샥 주어진 홈페이지를 구현하고, PR을 올리고 웹페이지를 배포하세요😀
- - 이 레포를 fork 한다!
- - fork하여 이동한 자신의 레포에서 깃크라켄을 통해 클론을 받습니다.
- - 클론을 받은 파일을 vs 코드에서 엽니다!
- - vs 코드에서 터미널을 열어서 npm run start 를 입력하면 코드가 실행됩니다!
-
-# 3주차 MISSION :  Bootstrap Album 페이지 클론코딩 해오기
+### 문제?
+아래 페이지를 클론 코딩하면 된다.<br>
 https://getbootstrap.com/docs/4.3/examples/album/
-
- ### 클론코딩(Clone-Coding)이란?
-: 말그대로 클론! 실제 서비스를 직접 내 손으로 밑 바닥부터 한땀 한땀 구현하는 코딩 학습방법입니다.
-실제 구현되어있는 서비스를 직접 내 손으로 따라 만들면서 배우는 것만큼 빠르고 효과적인 공부법은 없습니다!
-
-#클론코딩 제외 대상
+<br>
+<br>#클론코딩 제외 대상
 1. 우측 상단 햄버거 버튼
 2. 각 카드별 View/Edit 버튼
 3. 하단 Footer
 4. 기타 애니메이션 효과
 
+### 나의 구현 방식?
+먼저 app.js로 전체적인 틀을 보면...
 
--> 시간적으로 여유가 있으신 분들은 제외 대상 부분까지 구현해보셔도 실력향상에 큰 도움이 될 것 같습니다.
+![app](https://user-images.githubusercontent.com/103057334/174478256-67c99908-9033-4d30-8dd4-bfe900f096fc.png)
+
+#### GlobalStyle?
+
+![globalstyle](https://user-images.githubusercontent.com/103057334/174478343-a6013a0d-b866-42df-9187-25e5440cb131.png)
+
+<br>
+
+- 여긴 전체적인 스타일을 적용하기 위한 부분!
+- 전체적인 margin을 0으로 설정하였다.
+
+#### Top?
+
+![top](https://user-images.githubusercontent.com/103057334/174478471-5e7a0554-ea7b-4d34-835f-ab258dc8e4b5.png)
+<br>
+- 이 부분은 페이지의 맨 윗부분!
+- 이 곳의 전체적인 틀의 스타일을 TopWrapper에 저장하였다. 윗부분의 색상과 크기, padding 등을 설정!
+- 그리고 react icon을 이용하여 제시된 페이지와 최대한 같도록 구현하였는데...
+- 메뉴 아이콘을 감싸기 위해서 IconWrapper을 만들었다. 디테일한 부분은 최대한 클론 코딩 페이지와 같도록 설정.
 
 
-# 주의사항!
-✔최대한 Styled-Component와 Props를 활용해서 제작해 주시길 바랍니다.
+##### 이제 제대로 Top을 살펴보려는데...!
+##### TextBox?
 
-✔아직은 실제 검색 기능, 클릭시 나오는 메뉴등 동적인 부분은 구현하기 어렵습니다, 기능을 구현한다는 생각보다 현재 보이는 페이지 그대로를 만들어주세요!
+![text](https://user-images.githubusercontent.com/103057334/174478816-3de845b6-f8e6-44bb-8fb1-70d48f7dcf31.png)
+
+<br>
+
+- color, font-weight, font-size, float, padding, cursor을 props로 넘겨주었다.
+- props로 넘겨주지 않은 경우에는 설정한 default 값대로!
+
+##### 다시 Top으로 돌아와서...!
+- 먼저 카메라 아이콘을 가장 왼쪽에 배치. 스타일은 TextBox을 이용하여 props로 넘겨준다.
+- 'Album' 글자는 app.js에서 받아와서 TextBox의 props.children으로 넘겨준다.
+- 글자 스타일도 역시 TextBox을 이용하여 props로 넘겨준다!
+- 그리고 가장 오른쪽에 있는 메뉴 아이콘...
+- 이 아이콘 역시 TextBox을 이용하여 props로 넘겨주는데 IconWrapper로 감싸준다.
+- 그리고 전체적으로 TopWrapper로 감싸주면 끝!
+
+#### PageExplain?
+
+![pageExplain](https://user-images.githubusercontent.com/103057334/174479159-91068ac6-ff37-4ad2-911d-02ef0b53e49c.png)
+
+<br>
+
+- 이 부분은 페이지의 중간 부분. 즉, 앨범 제목과 설명이 있고 가운데에 두개의 버튼이 있는 부분!
+- 이 곳의 전체적인 틀의 스타일은 PageWrapper에 저장하였다. text 가운데에 배열하고 높이, padding, border 등을 설정.
 
 
-# 제출시 필수 사항
-- 과제 제출은 일요일 9시 입니다.
-- PR의 제목은 “ [본인의 성함] 멋쟁이 사자처럼 3번쨰 과제 제출 “
-- 제작하신 클론 페이지를 캡쳐해서 PR에 같이 올려주세요.
+##### 이제 제대로 PageExplain을 살펴보려는데...!
+##### Button?
 
+![button](https://user-images.githubusercontent.com/103057334/174479330-ad96f876-2f64-4773-a700-d5953e60ba2e.png)
+
+<br>
+
+- height, border-radius, border, font-size, font-weight, padding, margin-left, background, color, float을 props로 넘겨주었다.
+- props로 넘겨주지 않은 경우에는 설정한 default 값대로!
+- 마우스를 버튼 위로 올리면 커서가 pointer로 바뀌도록 설정
+
+##### 다시 PageExplain으로 돌아와서...!
+- 먼저 앨범 제목을 TextBox을 이용하여 props로 받는다.
+- 그리고 앨범 설명에 대한 부분도 TextBox을 이용하여 props.children으로 받는다.
+- 그리고 가장 아래에 Button 컴포넌트를 이용하여 버튼 두개를 만든다.
+- 버튼의 디테일한 부분은 최대한 클론 코딩 페이지와 같도록 설정해서 props로 넘겨준다.
+- 전체적인 부분은 PageWrapper로 감싸주기
+
+#### Background?
+![background](https://user-images.githubusercontent.com/103057334/174479680-3f07d148-b06b-4c1b-a6ab-6b608a691530.png)
+
+<br>
+
+- 앨범 부분을 전체적으로 감싸는 Background!
+- 앨범들이 중앙으로 모일 수 있도록 justify-content는 center로 설정
+- 그 외 배경이나 padding에 대한 부분은 클론 코딩 페이지와 최대한 비슷하게...!
+
+#### ImageCard?
+![imageCard](https://user-images.githubusercontent.com/103057334/174479918-ea7e3e5e-279f-4e4b-9e7c-3ec1f33eff8c.png)
+
+<br>
+
+- ImageContentCard는 각 앨범 카드의 전체적인 틀. 크기나 디자인 등은 클론 코딩 페이지와 최대한 같게 한다.
+- CardImage는 앨범의 사진 부분! 크기나 디자인 등은 클론 코딩 페이지와 최대한 같게 하고, 사진은 props를 통해 넘겨받는다.
+- CardContent는 앨범에서 사진 설명 부분. 사진마다 설명 분량의 차이가 있을 수 있으므로 일관성을 갖도록 크기를 설정해준다.
+
+
+##### 이제 ImageCard을 제대로 살펴보자...!
+- 먼저 CardImage로 사진을 props로 넘겨 받는다.
+- 그리고 사진에 대한 설명은 CardContent 안에서 TextBox를 통해 props로 넘겨 받는다.
+- 그리고 Button 컴포넌트를 이용하여 앨범 카드 왼쪽 아래에 있는 버튼 구현!
+- 이후 TextBox로 오른쪽 아래에 있는 시간 구현
+- 그리고 ImageContentCard로 전체적으로 감싸주면 끝!
+
+#### 이제 app.js를 다시 살펴볼까?
+- 먼저 전체적으로 GlobalStyle 적용
+- 그리고 Top으로 페이지 윗부분 만들고, PageExplain으로 앨범 제목과 설명 부분 작성!
+- 이후 ImageCard를 이용하여 본격적인 앨범을 만들고...
+- Background로 이 앨범을 감싸주면 완성!
+
+
+#### 이제 실행 시켜보면?!
+![클론 코딩](https://user-images.githubusercontent.com/103057334/174480490-7e041bf8-4a22-44a6-8fb4-e92758532967.png)
+
+<br>
+  똑같이 페이지 만들기 성공!
+<br>
 
 
