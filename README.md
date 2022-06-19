@@ -19,7 +19,9 @@ https://getbootstrap.com/docs/4.3/examples/album/
 
 <br>
 #### GlobalStyle?
+
 ![globalstyle](https://user-images.githubusercontent.com/103057334/174478343-a6013a0d-b866-42df-9187-25e5440cb131.png)
+
 <br>
 -'createGlobalStyle'에 margind을 0으로 적용하여 전체적인 margin을 0으로 설정하였다.
 
