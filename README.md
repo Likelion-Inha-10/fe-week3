@@ -83,6 +83,7 @@ https://getbootstrap.com/docs/4.3/examples/album/
 ![background](https://user-images.githubusercontent.com/103057334/174479680-3f07d148-b06b-4c1b-a6ab-6b608a691530.png)
 
 <br>
+
 - 앨범 부분을 전체적으로 감싸는 Background!
 - 앨범들이 중앙으로 모일 수 있도록 justify-content는 center로 설정
 - 그 외 배경이나 padding에 대한 부분은 클론 코딩 페이지와 최대한 비슷하게...!
