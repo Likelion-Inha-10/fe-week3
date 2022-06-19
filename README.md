@@ -33,7 +33,8 @@ https://getbootstrap.com/docs/4.3/examples/album/
 - 이 곳의 전체적인 틀의 스타일을 TopWrapper에 저장하였다. 윗부분의 색상과 크기, padding 등을 설정!
 - 그리고 react icon을 이용하여 제시된 페이지와 최대한 같도록 구현하였는데...
 - 메뉴 아이콘을 감싸기 위해서 IconWrapper을 만들었다. 디테일한 부분은 최대한 클론 코딩 페이지와 같도록 설정.
-<br>
+
+
 ##### 이제 제대로 Top을 살펴보려는데...!
 ##### TextBox?
 
