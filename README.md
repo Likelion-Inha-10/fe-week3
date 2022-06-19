@@ -395,3 +395,235 @@ const MainBox = (props) => {
 ![image](https://user-images.githubusercontent.com/79556112/174474127-54c61610-49c5-452b-8511-b5d1b5cc0263.png)
 
 ## 📚 AlbumBox
+
+AlbumBox의 영역을 나타내는 `AlbumContainer`와 내부의 Content를 담을 `AlbumWarp' Styled Component를 작성하였습니다.
+
+```javascript
+const AlbumContainer = styled.div`
+  background-color: #f8f9fa;
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+`;
+
+const AlbumWrap = styled.div`
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1140px;
+  display: flex;
+  flex-wrap: wrap;
+`;
+```
+
+'AlbumCard'를 **map**으로 배열하기 위해 아래와 같은 `Card`함수를 작성하였습니다.
+
+```javascript
+function Card({ card }) {
+  return <AlbumCard src={card.src} />;
+}
+```
+
+위에서 작성한 Styled Component로 작성한 **React Component**는 아래와 같습니다.
+
+```javascript
+const AlbumBox = (props) => {
+  const cards = [
+    {},
+    {},
+    {},
+    {
+      src: "https://i.pinimg.com/originals/53/25/b9/5325b9a536261e6c37c503326008647a.jpg",
+    },
+    { src: "https://miro.medium.com/max/3600/0*n-2bW82Z6m6U2bij.jpeg" },
+    {
+      src: "https://static.boredpanda.com/blog/wp-content/uploads/2019/04/funny-dancing-cats-fb3-png__700.jpg",
+    },
+    {
+      src: "https://www.sadanduseless.com/wp-content/uploads/2021/06/tasty.png",
+    },
+    { src: "https://media0.giphy.com/media/LkjlH3rVETgsg/200.gif" },
+    {
+      src: " https://fullsync.co.uk/wp-content/uploads/2021/01/Gaming-Cat-scaled.jpg",
+    },
+  ];
+  return (
+    <AlbumContainer>
+      <AlbumWrap>
+        {cards.map((card) => (
+          <Card card={card} />
+        ))}
+      </AlbumWrap>
+    </AlbumContainer>
+  );
+};
+```
+
+배열을 선언하여 내부에 `props`로 넘겨줄 값을 넣고, 이를 **map**을 사용하여 총 9개의 `AlbumCard`를 배열하였습니다.
+
+### 📜 AlbumCard
+
+AlbumCard의 영역에 해당하는 `AlbumCardWrap`과 내부에 Card를 표현하고 Content를 담을 `AlbumCardShadow` Styled Component를 작성하였습니다.
+
+```javascript
+const AlbumCardWrap = styled.div`
+  box-sizing: border-box;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 1.5rem;
+  max-width: 33.333333%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+`;
+
+const AlbumCardShadow = styled.div`
+  box-sizing: content-box;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+`;
+```
+
+`Thumbnail`과 `ThumbnailImg` Styled Component를 작성하였습니다.
+
+Thumbnail을 전달받았을 경우에는 해당 Thumbnail을, 아닌 경우에는 기본 이미지를 띄우도록 하였습니다.
+
+```javascript
+const Thumbnail = styled.div`
+  height: 13rem;
+  font-size: 1.125rem;
+  color: white;
+  background-color: #56595c;
+  text-align: center;
+  line-height: 13rem;
+  display: ${(props) => (props.src ? "none" : "")};
+`;
+
+const ThumnailImg = styled.img`
+  z-index: 10;
+  width: 100%;
+  height: 13rem;
+  display: ${(props) => (props.src ? "" : "none")};
+  object-fit: cover;
+`;
+```
+
+'CardBody'는 Card 내부의 text를 담는 역할을 하며, `CardText`가 내부에 담을 Text에 대한 Styled Component이다.
+
+`CardBottom`은 upload 시간과 버튼을 담는 Styled Component이다.
+
+```javascript
+const CardBody = styled.div`
+  padding: 1.25rem;
+  background-color: white;
+`;
+
+const CardText = styled.p`
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-align: left;
+  color: black;
+  line-height: 1.5;
+`;
+
+const CardBottom = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+`;
+```
+
+첫 번째 버튼과 두 번째 버튼의 모양이 다르므로 `FirstButton`과 `SecondButton`을, 
+
+업로드 시간을 표시하기 위한 `Minute` Styled Component를 아래와 같 작성하였습니다. 
+
+Button에는 클릭하여 focus일 경우와 커서를 hover했을 경우에 대하여 추가적인 css를 작성해주었습니다.
+
+```javascript
+const FirstButton = styled.button`
+  padding: 0.25rem 0.5rem;
+  margin-right: 0;
+  color: #6c757d;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-radius: 0.2rem 0 0 0.2rem;
+  background: none;
+  border: 1px solid #6c757d;
+  transition: 0.15s;
+  &:hover {
+    background-color: #6c757d;
+    color: white;
+    transition: 0.15s;
+  }
+  &:focus {
+    box-shadow: 0 0 0 3px rgba(108, 117, 125, 0.5);
+  }
+`;
+
+const Minute = styled.small`
+  color: #6c757d;
+  font-size: 80%;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+`;
+
+const SecondButton = styled.button`
+  padding: 0.25rem 0.5rem;
+  margin-left: -1px;
+  color: #6c757d;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-radius: 0 0.2rem 0.2rem 0;
+  border-left-width: 0;
+  background: none;
+  border: 1px solid #6c757d;
+  transition: 0.15s;
+  &:hover {
+    background-color: #6c757d;
+    color: white;
+    transition: 0.15s;
+  }
+  &:focus {
+    box-shadow: 0 0 0 3px rgba(108, 117, 125, 0.5);
+  }
+`;
+```
+
+위에서 작성한 Styled Component를 이용해 **React Component**를 아래와 같이 작성하였습니다.
+
+```javascript
+const AlbumCard = (props) => {
+  return (
+    <AlbumCardWrap>
+      <AlbumCardShadow>
+        <Thumbnail src={props.src}>Thumbnail</Thumbnail>
+        <ThumnailImg src={props.src}></ThumnailImg>
+        <CardBody>
+          <CardText>
+            This is a wider card with supporting text below as a natural lead-in
+            to additional content. This content is a little bit longer.
+          </CardText>
+          <CardBottom>
+            <div>
+              <FirstButton href="#">View</FirstButton>
+              <SecondButton>Edit</SecondButton>
+            </div>
+            <Minute>9 min</Minute>
+          </CardBottom>
+        </CardBody>
+      </AlbumCardShadow>
+    </AlbumCardWrap>
+  );
+};
+```
+
+Thumbnail에 대한 주소는 `props`로 전달받도록 하였으며, 위에 대한 결과는 아래와 같습니다.
+
+![image](https://user-images.githubusercontent.com/79556112/174475184-f5e4bd7e-adfb-401f-bfe3-6ba86434730c.png)
