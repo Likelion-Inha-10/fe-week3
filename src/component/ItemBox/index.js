@@ -2,6 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import Item from "../Item";
 
+// 전체 item 박스들을 관리하는 index.js 파일
+
+// item 부분 전체 박스
 const ItemSection = styled.div`
   height: 1230px;
   background-color: #f8f9fa;
@@ -9,6 +12,7 @@ const ItemSection = styled.div`
   padding-bottom: 48px;
 `;
 
+// item들을 담고 있는 작은 박스
 const Container = styled.div`
   width: 1140px;
   height: 1230px;

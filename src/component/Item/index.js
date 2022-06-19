@@ -1,21 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 
-const Thumbnails = styled.div`
+// 하나의 item 박스를 위한 index.js 파일
+
+// item 박스
+const Thumbnail = styled.div`
   width: 350px;
   height: 410px;
-  padding-left: 15px;
-  padding-right: 15px;
-`;
-
-const Thumbnail = styled.div`
+  margin-left: 15px;
+  margin-right: 15px;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   width: 348px;
   height: 384px;
   margin-bottom: 24px;
 `;
 
+// 사진
 const Image = styled.div`
   background-image: url(${(props) => props.url});
   width: 348px;
@@ -23,12 +25,14 @@ const Image = styled.div`
   background-size: cover;
 `;
 
+// content + minute 포함하고 있는 박스
 const Text = styled.div`
   width: 308px;
   height: 119px;
   padding: 20px;
 `;
 
+// 내용
 const Content = styled.div`
   width: 308px;
   height: 72px;
@@ -37,6 +41,7 @@ const Content = styled.div`
   color: #212529;
 `;
 
+// 분
 const Minute = styled.div`
   width: 308px;
   height: 31px;
@@ -48,15 +53,13 @@ const Minute = styled.div`
 
 const Item = (props) => {
   return (
-    <Thumbnails>
-      <Thumbnail>
-        <Image url={props.url}></Image>
-        <Text>
-          <Content>{props.content}</Content>
-          <Minute>{props.min}</Minute>
-        </Text>
-      </Thumbnail>
-    </Thumbnails>
+    <Thumbnail>
+      <Image url={props.url}></Image>
+      <Text>
+        <Content>{props.content}</Content>
+        <Minute>{props.min}</Minute>
+      </Text>
+    </Thumbnail>
   );
 };
 

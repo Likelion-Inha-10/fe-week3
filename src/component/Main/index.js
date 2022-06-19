@@ -1,12 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
+// 중간 부분 전체 박스
 const MainBox = styled.div`
   height: 216px;
   background-color: #ffffff;
   padding: 96px 32px 96px 32px;
 `;
 
+// TItle, Content, Button이 들어있는 박스
 const SmallBox = styled.div`
   text-align: center;
   width: 610px;
@@ -17,6 +19,7 @@ const SmallBox = styled.div`
   padding-right: 15px;
 `;
 
+// 'Album example' 박스
 const Title = styled.div`
   font-weight: 300;
   font-size: 40px;
@@ -25,6 +28,7 @@ const Title = styled.div`
   line-height: 1.2;
 `;
 
+// 'Album example' 밑에 내용 부분 박스
 const Content = styled.div`
   color: #6c757d;
   font-size: 1.25rem;
@@ -33,14 +37,14 @@ const Content = styled.div`
   line-height: 1.5;
 `;
 
+// 버튼 2개 포함하고 있는 박스
 const ButtonBox = styled.div`
   text-align: center;
 `;
 
+// 첫번째 파란 버튼
 const FirstButton = styled.div`
   display: inline-block;
-  text-align: center;
-  height: 24px;
   color: #fff;
   border: 1px solid #007bff;
   background-color: #007bff;
@@ -54,10 +58,9 @@ const FirstButton = styled.div`
   line-height: 1.5;
 `;
 
+// 두번째 회색 버튼
 const SecondButton = styled.div`
   display: inline-block;
-  text-align: center;
-  height: 24px;
   color: #fff;
   background-color: #6c757d;
   border: 1px solid #6c757d;

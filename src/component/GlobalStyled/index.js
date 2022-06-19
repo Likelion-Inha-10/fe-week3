@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
+// body에 스타일 적용하기 위함
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;

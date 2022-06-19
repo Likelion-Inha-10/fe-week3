@@ -7,10 +7,12 @@ import ItemBox from "./component/ItemBox";
 function App() {
   return (
     <>
-      <GlobalStyle></GlobalStyle>
-      <Bar></Bar>
-      <Main></Main>
-      <ItemBox></ItemBox>
+      {/* body에 스타일 적용 */}
+      <GlobalStyle />
+      {/* 상단바 */}
+      <Bar />
+      <Main />
+      <ItemBox />
     </>
   );
 }
