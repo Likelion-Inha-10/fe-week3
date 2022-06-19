@@ -22,7 +22,8 @@ https://getbootstrap.com/docs/4.3/examples/album/
 ![globalstyle](https://user-images.githubusercontent.com/103057334/174478343-a6013a0d-b866-42df-9187-25e5440cb131.png)
 
 <br>
-- 여긴 전체적인 스타이를 적용하기 위한 부분!
+
+- 여긴 전체적인 스타일을 적용하기 위한 부분!
 - 전체적인 margin을 0으로 설정하였다.
 
 #### Top?
