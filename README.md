@@ -107,14 +107,14 @@ https://getbootstrap.com/docs/4.3/examples/album/
 - 이후 TextBox로 오른쪽 아래에 있는 시간 구현
 - 그리고 ImageContentCard로 전체적으로 감싸주면 끝!
 
-#### 이제 app.js를 다시 살펴볼까...?!
+#### 이제 app.js를 다시 살펴볼까?
 - 먼저 전체적으로 GlobalStyle 적용
 - 그리고 Top으로 페이지 윗부분 만들고, PageExplain으로 앨범 제목과 설명 부분 작성!
 - 이후 ImageCard를 이용하여 본격적인 앨범을 만들고...
 - Background로 이 앨범을 감싸주면 완성!
 
 
-#### 이제 실행 시켜보면...?!
+#### 이제 실행 시켜보면?!
 ![클론 코딩](https://user-images.githubusercontent.com/103057334/174480490-7e041bf8-4a22-44a6-8fb4-e92758532967.png)
 
 <br>
