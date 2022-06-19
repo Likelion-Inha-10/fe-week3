@@ -134,3 +134,126 @@ const NavigationBar = () => {
 
 
 ### 📜 HamburgerContent
+
+`NavigationBar`와 동일하게 전체 영역을 표시할 `HamburgerBox`와 내부에 Content를 담을 `HamburgerWrap` Styled Component를 작성하였습니다. (중앙 정렬을 위해 동일하게 ` display: flex;` 작성)
+
+```javascript
+const HamburgerBox = styled.div`
+  transition: 0.5s;
+  height: ${(props) => (props.currentState === "auto" ? "auto" : "0")};
+  z-index: -10;
+  overflow: hidden;
+  width: 100%;
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #343a40;
+  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+`;
+
+const HamburgerWrap = styled.div`
+  max-width: 1140px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-left: 15px;
+  padding-right: 15px;
+`;
+```
+
+내부에 담긴 Content들을 보면 **About**과 **Contact**로 나눌 수 있으며, **About**은 아래와 같이 작성하였습니다.
+
+```javascript
+const AboutWrap = styled.div`
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  max-width: 58.333333%;
+  text-align: left;
+  margin: 0;
+`;
+
+const Title = styled.h4`
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-top: 0;
+`;
+
+const AboutText = styled.p`
+  color: #6c757d;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-top: 0;
+  margin-bottom: 1rem;
+`;
+```
+
+전체를 감싸는 `AboutWrap`과 내부의 `Title`, `AboutTitle` Styled Component를 위와 같이 작성하였습니다.
+
+**Contact**는 아래와 같이 작성하였습니다.
+
+```javascript
+const ContactWrap = styled.div`
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  margin-left: 8.333333%;
+  width: 100%;
+  max-width: 33.333333%;
+  display: flex;
+  flex-direction: column;
+`;
+
+const HyperLink = styled.a`
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+```
+
+전체를 감쌀 `ContactWrap`과 내부에 들어갈 `HyperLink`를 작성해주었습니다. `HyperLink`는 커서를 hover할 시에 text에 밑줄이 생겨야 하므로 `&:hover`시에 추가적인 css를 작성해주었습니다. `Title`은 **About**과 동일하므로 위에서 작성한 Styled Component를 사용하였습니다.
+
+위에서 작성한 Styled Component는 **React Component**에서 아래와 같이 사용하였습니다.
+
+```javascript
+const HamburgerContent = (props) => {
+  return (
+    <HamburgerBox currentState={props.currentState}>
+      <HamburgerWrap>
+        <AboutWrap>
+          <Title>About</Title>
+          <AboutText>
+            Add some information about the album below, the author, or any other
+            background context. Make it a few sentences long so folks can pick
+            up some informative tidbits. Then, link them off to some social
+            networking sites or contact information.
+          </AboutText>
+        </AboutWrap>
+        <ContactWrap>
+          <Title>Contact</Title>
+          <HyperLink href="#">Follow on Twitter</HyperLink>
+          <HyperLink href="#">Like on Facebook</HyperLink>
+          <HyperLink href="#">Email me</HyperLink>
+        </ContactWrap>
+      </HamburgerWrap>
+    </HamburgerBox>
+  );
+};
+```
+
+위에 대한 결과는 아래와 같습니다.
+
+![image](https://user-images.githubusercontent.com/79556112/174473540-d71aba86-6364-4489-b029-004766cf376b.png)
+
