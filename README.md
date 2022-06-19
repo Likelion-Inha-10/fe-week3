@@ -17,7 +17,6 @@ https://getbootstrap.com/docs/4.3/examples/album/
 
 ![app](https://user-images.githubusercontent.com/103057334/174478256-67c99908-9033-4d30-8dd4-bfe900f096fc.png)
 
-<br>
 #### GlobalStyle?
 
 ![globalstyle](https://user-images.githubusercontent.com/103057334/174478343-a6013a0d-b866-42df-9187-25e5440cb131.png)
