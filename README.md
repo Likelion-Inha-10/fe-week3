@@ -57,7 +57,7 @@ https://getbootstrap.com/docs/4.3/examples/album/
 ![pageExplain](https://user-images.githubusercontent.com/103057334/174479159-91068ac6-ff37-4ad2-911d-02ef0b53e49c.png)
 
 <br>
-- 이 부분은 페이지의 중간 부분. 즉, 앨범 제목과 설명이 있고 가운데에 두개의 버튼이 있는 부분!
+- 이 부분은 페이지의 중간 부분. 즉, 앨범 제목과 설명이 있고 가운데에 두개의 버튼이 있는 부분!<br>
 - 이 곳의 전체적인 틀의 스타일은 PageWrapper에 저장하였다. text 가운데에 배열하고 높이, padding, border 등을 설정.
 
 
