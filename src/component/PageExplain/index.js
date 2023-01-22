@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import TextBox from "../Text";
-import Button from "../Button";
+import { Link } from "react-router-dom";
+import { TextBox, Button } from "../Styled";
 
 const PageWrapper = styled.div`
   height: 260px;
   border: none;
-  padding: 100px 100px 50px 100px;
+  padding: 90px 100px 50px 100px;
   text-align: center;
   line-height: 1.5;
 `;
@@ -23,27 +23,43 @@ const PageExplain = (props) => {
       </TextBox>
 
       <br />
-      <Button
-        height="37px"
-        backgroundColor="#3075ff"
-        color="white"
-        padding="5px 20px 5px 20px"
-        fontSize="1rem"
-        float="center"
-      >
-        Main call to action
-      </Button>
-      <Button
-        height="37px"
-        backgroundColor="#6F757C"
-        color="white"
-        padding="5px 20px 5px 20px"
-        marginLeft="10px"
-        fontSize="1rem"
-        float="center"
-      >
-        Secondary action
-      </Button>
+      <Link to="/">
+        <Button
+          height="37px"
+          backgroundColor="#007bff"
+          color="white"
+          padding="5px 15px 5px 15px"
+          fontSize="1rem"
+          float="center"
+          hoverBackgroundColor="#2766e4"
+          hoverColor="white"
+          focusOutline="3.5px solid rgba(55, 144, 222, .5)"
+          onClick={() => {
+            window.scrollTo({ top: 0 });
+          }}
+        >
+          Main call to action
+        </Button>
+      </Link>
+      <Link to="/">
+        <Button
+          height="37px"
+          backgroundColor="#6c757d"
+          color="white"
+          padding="5px 15px 5px 15px"
+          marginLeft="5px"
+          fontSize="1rem"
+          float="center"
+          hoverBackgroundColor="#61666b"
+          hoverColor="white"
+          focusOutline="3.5px solid rgba(140, 140, 140, .5)"
+          onClick={() => {
+            window.scrollTo({ top: 0 });
+          }}
+        >
+          Secondary action
+        </Button>
+      </Link>
     </PageWrapper>
   );
 };

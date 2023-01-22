@@ -1,14 +1,14 @@
 import Top from "./component/Top";
-import GlobalStyle from "./component/GlobalStyle";
 import PageExplain from "./component/PageExplain";
 import ImageCard from "./component/ImageCard";
-import Background from "./component/Background";
+import Bottom from "./component/Bottom";
+import { Background, GlobalStyle, Footer } from "./component/Styled";
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      <Top>&nbsp;Album</Top>
+      <Top />
       <PageExplain title="Album example">
         Something short and leading about the collection below—its contents,
         <br /> the creator, etc. Make it short and sweet, but not too short so
@@ -88,6 +88,9 @@ function App() {
           종로 까치화방입니다!
         </ImageCard>
       </Background>
+      <Footer>
+        <Bottom />
+      </Footer>
     </>
   );
 }

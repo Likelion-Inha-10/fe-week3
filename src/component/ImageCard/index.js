@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import TextBox from "../Text";
-import Button from "../Button";
+import { TextBox, Button } from "../Styled";
 
 const ImageContentCard = styled.div`
   width: 350px;
@@ -46,6 +45,9 @@ const ImageCard = (props) => {
         padding="5px 8px 5px 8px"
         marginLeft="20px"
         float="left"
+        hoverBackgroundColor="#6F757C"
+        hoverColor="white"
+        focusOutline="3.5px solid rgba(110, 110, 110, .5)"
       >
         View
       </Button>
@@ -58,7 +60,10 @@ const ImageCard = (props) => {
         fontWeight="lighter"
         padding="5px 8px 5px 8px"
         float="left"
-        marginLeft="-1px"
+        backgroundColor="rgba(0, 0, 0, 0)"
+        hoverBackgroundColor="#6F757C"
+        hoverColor="white"
+        focusOutline="3.5px solid rgba(110, 110, 110, .5)"
       >
         Edit
       </Button>
