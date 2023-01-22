@@ -57,7 +57,6 @@ export const Background = styled.div`
 `;
 
 export const Footer = styled.footer`
-  clear: both;
   height: 110px;
   padding: 20px;
   font-size: 12px;
